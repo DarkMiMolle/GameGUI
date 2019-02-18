@@ -1,0 +1,3 @@
+[submodule "thirdparty/sfml"]
+	path = thirdparty/sfml
+	url = https://github.com/SFML/SFML.git
