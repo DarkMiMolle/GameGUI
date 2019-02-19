@@ -2,15 +2,14 @@
 
 #include <SFML/Graphics/Shape.hpp>
 
-namespace gameGUI {
-namespace core {
+#include "GUIObject.hpp"
 
-class Widget : public ::sf::Shape
+OPEN_CORE_NAMESPACES
+
+class Widget : public GUIObject, public ::sf::Shape
 {
 public:
     Widget();
 };
 
-} // namespace core
-} // namespace gameGUI
-
+CLOSE_CORE_NAMESPACES

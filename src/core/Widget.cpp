@@ -1,12 +1,10 @@
 #include "Widget.hpp"
 
-namespace gameGUI {
-namespace core {
+OPEN_CORE_NAMESPACES
 
-Widget::Widget() : sf::Shape()
+Widget::Widget() : GUIObject(), sf::Shape()
 {
 
 }
 
-} // namespace core
-} // namespace gameGUI
+CLOSE_CORE_NAMESPACES
