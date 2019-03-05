@@ -1,0 +1,2 @@
+#cmakedefine CONFIG_BUILD_TEST
+#cmakedefine CONFIG_BUILD_TEST_GUI

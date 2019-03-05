@@ -8,8 +8,12 @@ OPEN_CORE_NAMESPACES
 
 class Widget : public GUIObject, public ::sf::Shape
 {
+    DECLARE_GUIOBJECT(Widget)
 public:
-    Widget();
+    Widget(GUIObject* parent = nullptr);
+
+protected:
+    void doRefresh() override;
 };
 
 CLOSE_CORE_NAMESPACES

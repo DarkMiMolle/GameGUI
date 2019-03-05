@@ -22,19 +22,24 @@ public:
     GUIObject(GUIObject* parent = nullptr);
     virtual ~GUIObject();
 
-    const GUIObject* parent() const { return m_parent; }
+    virtual const GUIObject* parent() const final { return m_parent; }
 
-    void setVisible(bool visible = true);
-    bool visible() const;
+    virtual void setVisible(bool visible = true) final;
+    virtual bool visible() const final;
+
+    virtual void refresh() final;
 
 protected:
+    virtual void doRefresh() = 0;
+    virtual void doVisible(bool visible) {}
+
+private:
     GUIObject* m_parent;
     std::list<GUIObject*> m_children;
 
     void addChild(GUIObject* child);
     void addChild(std::nullptr_t) = delete;
 
-private:
     bool m_visible;
 };
 

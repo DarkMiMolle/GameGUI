@@ -2,9 +2,14 @@
 
 OPEN_CORE_NAMESPACES
 
-Widget::Widget() : GUIObject(), sf::Shape()
+Widget::Widget(GUIObject *parent) : GUIObject(parent), sf::Shape()
 {
+    
+}
 
+void Widget::doRefresh()
+{
+    
 }
 
 CLOSE_CORE_NAMESPACES

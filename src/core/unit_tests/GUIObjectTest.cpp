@@ -10,6 +10,10 @@ class RealGUIObject : public GUIObject
     public:
         RealGUIObject(GUIObject* parent = nullptr) : GUIObject(parent) {}
         ~RealGUIObject() override = default;
+
+    protected:
+        void doRefresh() override {}
+        void doVisible(bool visible) override {}
 };
 
 TEST_F(GUIObjectTest, ClassName)

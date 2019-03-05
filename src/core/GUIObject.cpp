@@ -22,6 +22,7 @@ GUIObject::~GUIObject()
 void GUIObject::setVisible(bool visible)
 {
     m_visible = visible;
+    doVisible(visible);
     for (auto child : m_children)
     {
         if (child)
@@ -32,6 +33,16 @@ void GUIObject::setVisible(bool visible)
 bool GUIObject::visible() const
 {
     return m_visible;
+}
+
+void GUIObject::refresh()
+{
+    doRefresh();
+    for (auto child : m_children)
+    {
+        if (child)
+            child->refresh();
+    }
 }
 
 void GUIObject::addChild(GUIObject *child)
