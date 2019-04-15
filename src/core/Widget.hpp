@@ -12,8 +12,13 @@ class Widget : public GUIObject, public ::sf::Shape
 public:
     Widget(GUIObject* parent = nullptr);
 
+    std::size_t getPointCount() const override { return 4; }
+    sf::Vector2f getPoint(std::size_t index) const override { return sf::Vector2f(); }
+
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const override = 0;
+
 protected:
-    void doRefresh() override;
+
 };
 
 CLOSE_CORE_NAMESPACES

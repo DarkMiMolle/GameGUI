@@ -1,4 +1,5 @@
 list(APPEND MODULES core)
+list(APPEND MODULES widgets)
 
 foreach(module ${MODULES})
 	add_subdirectory(${module})

@@ -35,13 +35,13 @@ bool GUIObject::visible() const
     return m_visible;
 }
 
-void GUIObject::refresh()
+void GUIObject::refresh(const sf::Event &event)
 {
-    doRefresh();
+    doRefresh(event);
     for (auto child : m_children)
     {
         if (child)
-            child->refresh();
+            child->refresh(event);
     }
 }
 

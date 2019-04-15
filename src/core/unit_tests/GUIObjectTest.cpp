@@ -11,9 +11,16 @@ class RealGUIObject : public GUIObject
         RealGUIObject(GUIObject* parent = nullptr) : GUIObject(parent) {}
         ~RealGUIObject() override = default;
 
+
+    sf::FloatRect rect() const override { return sf::FloatRect(); }
+    void setPosition(const sf::Vector2f&) override {}
+    void setSize(const sf::Vector2f&) override {}
+
+
     protected:
-        void doRefresh() override {}
+        void doRefresh(const sf::Event& event) override {}
         void doVisible(bool visible) override {}
+
 };
 
 TEST_F(GUIObjectTest, ClassName)

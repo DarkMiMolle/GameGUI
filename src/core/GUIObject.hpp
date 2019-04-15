@@ -3,6 +3,8 @@
 #include <string_view>
 #include <memory>
 #include <list>
+#include <SFML/Graphics/Rect.hpp>
+#include <SFML/Window/Event.hpp>
 #include "coreGlobal.hpp"
 
 #define DECLARE_GUIOBJECT(name)                                 \
@@ -27,11 +29,15 @@ public:
     virtual void setVisible(bool visible = true) final;
     virtual bool visible() const final;
 
-    virtual void refresh() final;
+    virtual void refresh(const sf::Event& event) final;
+
+    virtual sf::FloatRect rect() const = 0;
+    virtual void setPosition(const sf::Vector2f& position) = 0;
+    virtual void setSize(const sf::Vector2f& size) = 0;
 
 protected:
-    virtual void doRefresh() = 0;
-    virtual void doVisible(bool visible) {}
+    virtual void doRefresh(const sf::Event& event) = 0;
+    virtual void doVisible(bool) {}
 
 private:
     GUIObject* m_parent;
@@ -40,7 +46,7 @@ private:
     void addChild(GUIObject* child);
     void addChild(std::nullptr_t) = delete;
 
-    bool m_visible;
+    bool m_visible = true;
 };
 
 CLOSE_CORE_NAMESPACES
