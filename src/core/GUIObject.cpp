@@ -37,6 +37,8 @@ bool GUIObject::visible() const
 
 void GUIObject::refresh(const sf::Event &event)
 {
+    if (!visible())
+        return;
     doRefresh(event);
     for (auto child : m_children)
     {

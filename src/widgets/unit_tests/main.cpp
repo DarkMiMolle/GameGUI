@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 
 #include <Button.hpp>
+#include <TextBox.hpp>
 #include <Layout.hpp>
 #include <SFML/Window.hpp>
 #endif
@@ -39,15 +40,11 @@ void manualTest()
         std::cout << "Hello" << std::endl;
     });
 
-    gameGUI::widgets::Button bt2("Bonjour", font);
-    //bt1.setPosition(sf::Vector2f(10, 10));
-    bt2.setClickedCallback([](){
-        std::cout << "Bonjour" << std::endl;
-    });
+    gameGUI::widgets::TextBox tb(font);
 
     gameGUI::core::Layout ly;
     ly.addWidget(&bt1);
-    ly.addWidget(&bt2);
+    ly.addWidget(&tb);
 
     while (window.isOpen())
     {

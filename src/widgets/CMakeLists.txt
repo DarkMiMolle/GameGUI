@@ -3,6 +3,7 @@ find_package(SFML REQUIRED)
 add_library(widgets ${BUILD_TYPE}
 	widgetsGlobal.hpp
 	Button.hpp Button.cpp
+	TextBox.hpp TextBox.cpp
 	)
 target_link_libraries(widgets
 	core

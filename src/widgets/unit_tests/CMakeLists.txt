@@ -2,7 +2,9 @@ find_package(gtest REQUIRED)
 
 
 add_executable(widgets_test main.cpp
-	ButtonTest.hpp ButtonTest.cpp)
+	ButtonTest.hpp ButtonTest.cpp
+	TextBoxTest.hpp TextBoxTest.cpp
+	)
 
 target_link_libraries(widgets_test gtest widgets)
 target_include_directories(widgets_test PUBLIC "${CMAKE_BINARY_DIR}/${CONFIG_DIR}")
