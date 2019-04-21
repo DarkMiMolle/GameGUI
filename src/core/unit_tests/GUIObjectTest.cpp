@@ -13,8 +13,10 @@ class RealGUIObject : public GUIObject
 
 
     sf::FloatRect rect() const override { return sf::FloatRect(); }
+    sf::Vector2f position() const override { return {}; }
     void setPosition(const sf::Vector2f&) override {}
     void setSize(const sf::Vector2f&) override {}
+    void draw(sf::RenderTarget& target, sf::RenderStates states) const override {}
 
 
     protected:

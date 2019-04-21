@@ -28,6 +28,11 @@ sf::FloatRect Button::rect() const
     return m_buttonShape.getLocalBounds();
 }
 
+sf::Vector2f Button::position() const
+{
+    return m_buttonShape.getPosition();
+}
+
 void Button::setPosition(const sf::Vector2f &position)
 {
     m_buttonShape.setPosition(position);

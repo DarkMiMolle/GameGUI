@@ -1,9 +1,12 @@
 #pragma once
 
+#include "coreGlobal.hpp"
+
+OPEN_CORE_NAMESPACES
 
 class LayoutTest
 {
 public:
-    LayoutTest();
 };
 
+CLOSE_CORE_NAMESPACES

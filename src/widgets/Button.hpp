@@ -18,6 +18,7 @@ public:
 
 
     sf::FloatRect rect() const override;
+    sf::Vector2f position() const override;
     void setPosition(const sf::Vector2f &position) override;
     void setSize(const sf::Vector2f &size) override;
 

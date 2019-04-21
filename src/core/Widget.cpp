@@ -2,7 +2,7 @@
 
 OPEN_CORE_NAMESPACES
 
-Widget::Widget(GUIObject *parent) : GUIObject(parent), sf::Shape()
+Widget::Widget(GUIObject *parent) : GUIObject(parent)
 {
     
 }

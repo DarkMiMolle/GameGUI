@@ -6,7 +6,7 @@
 
 OPEN_CORE_NAMESPACES
 
-class Widget : public GUIObject, public ::sf::Shape
+class Widget : public GUIObject, public sf::Shape
 {
     DECLARE_GUIOBJECT(Widget)
 public:
@@ -15,7 +15,7 @@ public:
     std::size_t getPointCount() const override { return 4; }
     sf::Vector2f getPoint(std::size_t index) const override { return sf::Vector2f(); }
 
-    void draw(sf::RenderTarget& target, sf::RenderStates states) const override = 0;
+    void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const override = 0;
 
 protected:
 

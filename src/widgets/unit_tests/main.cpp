@@ -6,6 +6,7 @@
 #include <SFML/Graphics.hpp>
 
 #include <Button.hpp>
+#include <Layout.hpp>
 #include <SFML/Window.hpp>
 #endif
 
@@ -32,11 +33,21 @@ void manualTest()
     sf::Font font;
     font.loadFromFile("/usr/share/fonts/gnu-free/FreeSans.ttf");
 
-    gameGUI::widgets::Button bt("Hello", font);
-    bt.setPosition(sf::Vector2f(10, 10));
-    bt.setClickedCallback([](){
+    gameGUI::widgets::Button bt1("Hello", font);
+    //bt1.setPosition(sf::Vector2f(10, 10));
+    bt1.setClickedCallback([](){
         std::cout << "Hello" << std::endl;
     });
+
+    gameGUI::widgets::Button bt2("Bonjour", font);
+    //bt1.setPosition(sf::Vector2f(10, 10));
+    bt2.setClickedCallback([](){
+        std::cout << "Bonjour" << std::endl;
+    });
+
+    gameGUI::core::Layout ly;
+    ly.addWidget(&bt1);
+    ly.addWidget(&bt2);
 
     while (window.isOpen())
     {
@@ -46,10 +57,10 @@ void manualTest()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
-        bt.refresh(event);
+        ly.refresh(event);
 
         window.clear(sf::Color::Black);
-        window.draw(bt);
+        ly.draw(window);
         window.display();
     }
 
