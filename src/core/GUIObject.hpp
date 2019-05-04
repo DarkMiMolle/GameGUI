@@ -11,9 +11,9 @@
 
 #define DECLARE_GUIOBJECT(name)                                 \
     public:                                                     \
-    static constexpr std::string_view className()               \
+    static constexpr ::std::string_view className()               \
     {                                                           \
-        return std::string_view(#name);                         \
+        return ::std::string_view(#name);                         \
     }
 
 
