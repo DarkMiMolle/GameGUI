@@ -19,7 +19,7 @@ void Layout::draw(sf::RenderTarget &target, sf::RenderStates states) const
     for (auto e : m_items)
     {
         if (e.first)
-            e.first->draw(target, states);
+            target.draw(*e.first, states);
     }
 }
 
