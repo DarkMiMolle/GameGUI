@@ -19,7 +19,7 @@
 
 OPEN_CORE_NAMESPACES
 
-class GUIObject
+class GUIObject : public sf::Drawable, public sf::Transformable
 {
     DECLARE_GUIOBJECT(GUIObject)
 public:
@@ -38,9 +38,8 @@ public:
     virtual void setPosition(const sf::Vector2f& position) = 0;
     virtual void setSize(const sf::Vector2f& size) = 0;
 
-    virtual void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const = 0;
-
 protected:
+    virtual void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const = 0;
     virtual void doRefresh(const sf::Event& event) = 0;
     virtual void doVisible(bool) {}
 

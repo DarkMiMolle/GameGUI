@@ -18,8 +18,6 @@ public:
     Layout(const sf::Vector2f& size, GUIObject *parent = nullptr);
     ~Layout() override = default;
 
-    void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const override;
-
     virtual void addWidget(Widget* widget);
     virtual void addLayout(Layout* layout);
 
@@ -29,6 +27,7 @@ public:
     void setSize(const sf::Vector2f& size) override;
 
 protected:
+    void draw(sf::RenderTarget& target, sf::RenderStates states = sf::RenderStates::Default) const override;
     void doVisible(bool visible) override;
     void doRefresh(const sf::Event& event) override;
 

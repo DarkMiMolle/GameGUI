@@ -1,9 +1,9 @@
 #include <gtest/gtest.h>
 #include <Config.hpp>
-//#include "GUIObjectTest.hpp"
 
 #ifdef CONFIG_BUILD_TEST_GUI
 #include <SFML/Graphics.hpp>
+#include <Image.hpp>
 
 #include <Button.hpp>
 #include <TextBox.hpp>
@@ -42,9 +42,14 @@ void manualTest()
 
     gameGUI::widgets::TextBox tb(font);
 
+    gameGUI::widgets::Image img;
+    img.loadFromFile("data/Tux.png");
+    img.setSize(sf::Vector2f(50,50));
+
     gameGUI::core::Layout ly;
     ly.addWidget(&bt1);
     ly.addWidget(&tb);
+    ly.addWidget(&img);
 
     while (window.isOpen())
     {
@@ -57,7 +62,7 @@ void manualTest()
         ly.refresh(event);
 
         window.clear(sf::Color::Black);
-        ly.draw(window);
+        window.draw(ly);
         window.display();
     }
 
